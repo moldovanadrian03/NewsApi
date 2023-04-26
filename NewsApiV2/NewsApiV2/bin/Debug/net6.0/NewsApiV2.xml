@@ -36,5 +36,25 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:NewsApiV2.Controllers.CategoriesController.Get">
+            <summary>
+            This is an getAllCategories method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.Controllers.CategoriesController.GetById(System.Guid)">
+            <summary>
+            This is an getCategoryById method.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.Controllers.CategoriesController.Delete(System.Guid)">
+            <summary>
+            This is an deleteCategoryById method.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

@@ -13,7 +13,7 @@ namespace NewsApiV2.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        static List<Category> categories = new List<Category> {
+        static List<Category> _categories = new List<Category> {
             new Category { Id = Guid.NewGuid(), Name = "Lab"},
             new Category { Id = Guid.NewGuid(), Name = "Course"},
             new Category { Id = Guid.NewGuid(), Name = "Seminary"}
@@ -26,7 +26,7 @@ namespace NewsApiV2.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("GetCategories method was called.");
+            return Ok(_categories);
         }
 
         /// <summary>
