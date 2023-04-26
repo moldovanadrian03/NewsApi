@@ -18,6 +18,29 @@ namespace NewsApiV2
             return Ok("Get method was called.");
         }
 
+        [HttpGet("getById/{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            return Ok("GetById method was called.");
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute] Guid id)
+        {
+            return Ok(id);
+        }
+
+        [HttpPost]
+        public IActionResult Create()
+        {
+            return Ok("Create method was called.");
+        }
+
+        [HttpPut]
+        public IActionResult Update()
+        {
+            return Ok("Update method was called.");
+        }
 
         //// GET: api/values
         //[HttpGet]
