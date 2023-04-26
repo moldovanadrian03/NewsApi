@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "YGTidwurTP8rglzeW063UJ1T6FbwLmaJ1H+2PTrrKWU5Yozd9niBZgWYa1q2VCe7I3u8gRlFdvr7HhONfWtu6w==",
+  "success": true,
+  "projectFilePath": "/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/NewsApiV2.csproj",
+  "expectedPackageFiles": [
+    "/Users/adrianmoldovan/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/adrianmoldovan/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/adrianmoldovan/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/adrianmoldovan/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/adrianmoldovan/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/adrianmoldovan/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
