@@ -16,4 +16,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Controllers\Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Models\" />
+  </ItemGroup>
 </Project>
