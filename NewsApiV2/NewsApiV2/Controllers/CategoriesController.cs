@@ -36,8 +36,22 @@ namespace NewsApiV2.Controllers
         /// <returns></returns>
         [HttpGet("getById/{id}")]
         public IActionResult GetById(Guid id)
-        {
-            return Ok("GetCategoryById method was called.");
+        { 
+            Category category = new Category();
+            bool isValid = false;
+            foreach(Category category1 in _categories)
+            {
+                if (category1.Id.Equals(id))
+                {
+                    category = category1;
+                    isValid = true;
+                }
+            }
+            if (!isValid)
+            {
+                return NotFound();
+            }
+            return Ok(category);
         }
 
         /// <summary>
@@ -50,6 +64,7 @@ namespace NewsApiV2.Controllers
         {
             return Ok(id);
         }
+
         /// <summary>
         /// This is an CreateCategory method.
         /// </summary>

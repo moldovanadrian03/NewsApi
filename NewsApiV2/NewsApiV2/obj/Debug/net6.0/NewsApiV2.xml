@@ -56,5 +56,12 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:NewsApiV2.Controllers.CategoriesController.Create(NewsApiV2.Controllers.Models.Category)">
+            <summary>
+            This is an CreateCategory method.
+            </summary>
+            <param name="category"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>
