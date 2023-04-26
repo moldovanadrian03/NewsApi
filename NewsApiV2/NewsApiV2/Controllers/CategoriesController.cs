@@ -23,6 +23,12 @@ namespace NewsApiV2.Controllers
         {
             return Ok("GetCategoryById method was called.");
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute] Guid id)
+        {
+            return Ok(id);
+        }
     }
 }
 
