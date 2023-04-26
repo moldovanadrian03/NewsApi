@@ -12,7 +12,11 @@ namespace NewsApiV2.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-       
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("GetCategories method was called.");
+        }
     }
 }
 
