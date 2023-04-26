@@ -50,6 +50,17 @@ namespace NewsApiV2.Controllers
         {
             return Ok(id);
         }
+        /// <summary>
+        /// This is an CreateCategory method.
+        /// </summary>
+        /// <param name="category"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public IActionResult Create([FromBody] Category category)
+        {
+            _categories.Add(category);
+            return Ok("Category added.");
+        }
     }
 }
 
