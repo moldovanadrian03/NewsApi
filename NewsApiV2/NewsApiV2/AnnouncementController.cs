@@ -12,67 +12,57 @@ namespace NewsApiV2
     [Route("api/[controller]")]
     public class AnnouncementController : ControllerBase
     {
+        /// <summary>
+        /// This is an getAll method.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
             return Ok("Get method was called.");
         }
 
+        /// <summary>
+        /// This is an getElementById method.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet("getById/{id}")]
         public IActionResult GetById(Guid id)
         {
             return Ok("GetById method was called.");
         }
 
+        /// <summary>
+        /// This is an deleteElementById method.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete([FromRoute] Guid id)
         {
             return Ok(id);
         }
 
+        /// <summary>
+        /// This is an createElement method.
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Create()
         {
             return Ok("Create method was called.");
         }
 
+        /// <summary>
+        /// This is an updateElement method.
+        /// </summary>
+        /// <returns></returns>
         [HttpPut]
         public IActionResult Update()
         {
             return Ok("Update method was called.");
         }
-
-        //// GET: api/values
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2" };
-        //}
-
-        //// GET api/values/5
-        //[HttpGet("{id}")]
-        //public string Get(int id)
-        //{
-        //    return "value";
-        //}
-
-        //// POST api/values
-        //[HttpPost]
-        //public void Post([FromBody]string value)
-        //{
-        //}
-
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
 
