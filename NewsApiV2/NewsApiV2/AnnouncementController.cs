@@ -12,6 +12,13 @@ namespace NewsApiV2
     [Route("api/[controller]")]
     public class AnnouncementController : ControllerBase
     {
+        [HttpGet]
+        public IActionResult Get()
+        {
+            return Ok("Get method was called.");
+        }
+
+
         //// GET: api/values
         //[HttpGet]
         //public IEnumerable<string> Get()

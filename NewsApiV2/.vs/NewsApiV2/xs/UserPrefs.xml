@@ -1,4 +1,28 @@
 ﻿<Properties StartupConfiguration="{3C388304-4ECC-403D-A50D-D6405CD273BC}|Default">
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.NewsApiV2 FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.NewsApiV2 PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="NewsApiV2/AnnouncementController.cs">
+    <Files>
+      <File FileName="NewsApiV2/NewsApiV2.csproj" Line="12" Column="3" />
+      <File FileName="NewsApiV2/Program.cs" Line="15" Column="1" />
+      <File FileName="NewsApiV2/Properties/launchSettings.json" Line="16" Column="30" />
+      <File FileName="NewsApiV2/AnnouncementController.cs" Line="13" Column="57" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="NewsApiV2" expanded="True">
+            <Node name="NewsApiV2" expanded="True">
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
