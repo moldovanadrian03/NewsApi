@@ -39,11 +39,11 @@ namespace NewsApiV2.Controllers
         { 
             Category category = new Category();
             bool isValid = false;
-            foreach(Category category1 in _categories)
+            foreach(Category currCategory in _categories)
             {
-                if (category1.Id.Equals(id))
+                if (currCategory.Id.Equals(id))
                 {
-                    category = category1;
+                    category = currCategory;
                     isValid = true;
                 }
             }
@@ -62,6 +62,13 @@ namespace NewsApiV2.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete([FromRoute] Guid id)
         {
+            foreach(Category currCategory in _categories)
+            {
+                if (currCategory.Id.Equals(id))
+                {
+                    _categories.Remove(currCategory);
+                }
+            }
             return Ok(id);
         }
 
