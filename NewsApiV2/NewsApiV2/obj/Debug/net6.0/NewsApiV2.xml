@@ -4,5 +4,37 @@
         <name>NewsApiV2</name>
     </assembly>
     <members>
+        <member name="M:NewsApiV2.AnnouncementController.Get">
+            <summary>
+            This is an getAll method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.AnnouncementController.GetById(System.Guid)">
+            <summary>
+            This is an getElementById method.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.AnnouncementController.Delete(System.Guid)">
+            <summary>
+            This is an deleteElementById method.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.AnnouncementController.Create">
+            <summary>
+            This is an createElement method.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.AnnouncementController.Update">
+            <summary>
+            This is an updateElement method.
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>
