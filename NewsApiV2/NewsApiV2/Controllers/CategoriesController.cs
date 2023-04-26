@@ -17,6 +17,12 @@ namespace NewsApiV2.Controllers
         {
             return Ok("GetCategories method was called.");
         }
+
+        [HttpGet("getById/{id}")]
+        public IActionResult GetById(Guid id)
+        {
+            return Ok("GetCategoryById method was called.");
+        }
     }
 }
 
