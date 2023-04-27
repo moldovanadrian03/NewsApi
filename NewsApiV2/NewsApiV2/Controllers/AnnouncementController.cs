@@ -54,12 +54,16 @@ namespace NewsApiV2
         }
 
         /// <summary>
-        /// This is an createElement method.
+        /// This method takes an ann from the body and return it in the response.
         /// </summary>
         /// <returns></returns>
         [HttpPost]
         public IActionResult Create([FromBody] Announcement announcement)
         {
+            if (announcement == null)
+            {
+                return BadRequest("Announcement cannot be null.");
+            }
             return Ok(announcement);
         }
 
