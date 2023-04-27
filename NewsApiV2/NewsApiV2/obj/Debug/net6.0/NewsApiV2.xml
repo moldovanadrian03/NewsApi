@@ -63,5 +63,12 @@
             <param name="category"></param>
             <returns></returns>
         </member>
+        <member name="M:NewsApiV2.Controllers.CategoriesController.Update(System.Guid,NewsApiV2.Controllers.Models.Category)">
+            <summary>
+            This is an UpdateCategory method.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

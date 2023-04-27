@@ -83,6 +83,26 @@ namespace NewsApiV2.Controllers
             _categories.Add(category);
             return Ok("Category added.");
         }
+
+        //TODO update function
+        /// <summary>
+        /// This is an UpdateCategory method.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public IActionResult Update([FromRoute] Guid id, [FromBody] Category category)
+        {
+            foreach(Category currCategory in _categories)
+            {
+                if (currCategory.Id.Equals(id))
+                {
+                    _categories.Add(category);
+                    _categories.Remove(currCategory);
+                }
+            }
+            return Ok("Category updated");
+        }
     }
 }
 
