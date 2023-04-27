@@ -22,13 +22,13 @@ namespace NewsApiV2
         };
 
         /// <summary>
-        /// This is an getAll method.
+        /// This method returns all Announcements.
         /// </summary>
         /// <returns></returns>
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Get method was called.");
+            return Ok(_announcements);
         }
 
         /// <summary>

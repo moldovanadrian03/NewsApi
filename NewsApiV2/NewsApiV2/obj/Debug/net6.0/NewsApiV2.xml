@@ -6,7 +6,7 @@
     <members>
         <member name="M:NewsApiV2.AnnouncementController.Get">
             <summary>
-            This is an getAll method.
+            This method returns all Announcements.
             </summary>
             <returns></returns>
         </member>
