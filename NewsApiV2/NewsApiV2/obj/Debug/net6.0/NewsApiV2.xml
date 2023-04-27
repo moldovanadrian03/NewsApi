@@ -70,5 +70,26 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="M:NewsApiV2.Controllers.ExercisesController.GetUsers">
+            <summary>
+            This function returns all users.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.Controllers.ExercisesController.UpdateUsers(System.Int32,System.String)">
+            <summary>
+            This method replace an existing user to the _users list
+            </summary>
+            <param name="id"></param>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.Controllers.ExercisesController.DeleteUser(System.Int32)">
+            <summary>
+            This method delete an existing user
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

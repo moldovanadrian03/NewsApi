@@ -12,6 +12,61 @@ namespace NewsApiV2.Controllers
     [ApiController]
     public class ExercisesController : ControllerBase
     {
+        static List<string> _users = new List<string>
+        {
+            "Adi",
+            "Andrei",
+            "BlaBla",
+            "Johnny"
+        };
+
+        /// <summary>
+        /// This function returns all users.
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult GetUsers()
+        {
+            return Ok(_users);
+        }
+
+        /// <summary>
+        /// This method replace an existing user to the _users list
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPut("{id}")]
+        public IActionResult UpdateUsers(int id, [FromBody] string user)
+        {
+            if(id < 0 || id > _users.Count)
+            {
+                return BadRequest("Invalid index.");
+            }
+            if(user == null)
+            {
+                return BadRequest("New user cannot be null.");
+            }
+            _users[id] = user;
+            return Ok(_users);
+        }
+
+        /// <summary>
+        /// This method delete an existing user
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public IActionResult DeleteUser(int id)
+        {
+            if(id < 0 || id > _users.Count)
+            {
+                return BadRequest("This user does not exist.");
+            }
+            _users.Remove(_users[id]);
+            return Ok(_users);
+        }
+
         [HttpGet("{name}")]
         public IActionResult GetId(string name, double param1, double param2)
         {
