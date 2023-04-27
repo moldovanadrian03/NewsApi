@@ -12,18 +12,27 @@ namespace NewsApiV2.Controllers
     [ApiController]
     public class ExercisesController : ControllerBase
     {
-        //[HttpGet("GetId/{id}")]
-        //public IActionResult GetId(Guid id)
-        //{
-        //    return Ok(id);
-        //}
-
         [HttpGet("{name}")]
         public IActionResult GetId(string name, double param1, double param2)
         {
             double sum = param1 + param2;
             string message = $"Hoola, {name}, the sum of {param1} and {param2} is {sum}";
             return Ok(message);
+        }
+
+        public static double SumOfNumbers(List<double> doubles)
+        {
+            if(doubles == null || doubles.Count == 0)
+            {
+                throw new ArgumentException("List cannot be null or empty.");
+            }
+
+            double sum = 0;
+            foreach (double elem in doubles)
+            {
+                sum += elem;
+            }
+            return sum;
         }
     }
 }
