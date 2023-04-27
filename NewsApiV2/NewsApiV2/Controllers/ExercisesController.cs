@@ -12,10 +12,18 @@ namespace NewsApiV2.Controllers
     [ApiController]
     public class ExercisesController : ControllerBase
     {
-        [HttpGet("GetId/{id}")]
-        public IActionResult GetId(Guid id)
+        //[HttpGet("GetId/{id}")]
+        //public IActionResult GetId(Guid id)
+        //{
+        //    return Ok(id);
+        //}
+
+        [HttpGet("{name}")]
+        public IActionResult GetId(string name, double param1, double param2)
         {
-            return Ok(id);
+            double sum = param1 + param2;
+            string message = $"Hoola, {name}, the sum of {param1} and {param2} is {sum}";
+            return Ok(message);
         }
     }
 }
