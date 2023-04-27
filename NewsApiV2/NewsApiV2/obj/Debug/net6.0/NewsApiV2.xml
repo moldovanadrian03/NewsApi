@@ -24,7 +24,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:NewsApiV2.AnnouncementController.Create">
+        <member name="M:NewsApiV2.AnnouncementController.Create(NewsApiV2.Controllers.Models.Announcement)">
             <summary>
             This is an createElement method.
             </summary>

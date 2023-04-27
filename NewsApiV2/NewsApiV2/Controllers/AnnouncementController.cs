@@ -58,9 +58,9 @@ namespace NewsApiV2
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult Create()
+        public IActionResult Create([FromBody] Announcement announcement)
         {
-            return Ok("Create method was called.");
+            return Ok(announcement);
         }
 
         /// <summary>
