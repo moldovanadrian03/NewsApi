@@ -43,14 +43,25 @@ namespace NewsApiV2
         }
 
         /// <summary>
-        /// This is an deleteElementById method.
+        /// This method delete an announcement by id.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id}")]
         public IActionResult Delete([FromRoute] Guid id)
         {
-            return Ok(id);
+            bool exist = false;
+            foreach(Announcement currAnn in _announcements)
+            {
+                if(currAnn.Id == id)
+                {
+                    exist = true;
+                    _announcements.Remove(currAnn);
+                    break;
+                }
+            }
+            if (exist) { return Ok($"Ann: {id} is deleted succesfully."); }
+            return NotFound();
         }
 
         /// <summary>
@@ -67,14 +78,32 @@ namespace NewsApiV2
             return Ok(announcement);
         }
 
-        /// <summary>
-        /// This is an updateElement method.
-        /// </summary>
-        /// <returns></returns>
+       /// <summary>
+       /// This method update an existing announcement.
+       /// </summary>
+       /// <param name="id"></param>
+       /// <param name="announcement"></param>
+       /// <returns></returns>
         [HttpPut]
-        public IActionResult Update()
+        public IActionResult Update([FromRoute] Guid id, [FromBody] Announcement announcement)
         {
-            return Ok("Update method was called.");
+            bool exist = false;
+            if(announcement == null)
+            {
+                return BadRequest("Announcement cannot be null.");
+            }
+            foreach(Announcement currAnn in _announcements)
+            {   //TODO remake this
+                if (currAnn.Id == id)
+                {
+                    exist = true;
+                    _announcements.Remove(currAnn);
+                    _announcements.Add(announcement);
+                    break;
+                }
+            }
+            if (exist) { return Ok($"Ann: {announcement} is updated succesfully."); }
+            return NotFound();
         }
     }
 }

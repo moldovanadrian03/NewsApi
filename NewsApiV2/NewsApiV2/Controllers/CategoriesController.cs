@@ -99,6 +99,7 @@ namespace NewsApiV2.Controllers
                 {
                     _categories.Add(category);
                     _categories.Remove(currCategory);
+                    break;
                 }
             }
             return Ok("Category updated");
