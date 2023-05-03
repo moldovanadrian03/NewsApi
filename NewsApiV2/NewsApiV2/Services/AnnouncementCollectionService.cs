@@ -30,7 +30,8 @@ namespace NewsApiV2.Services
 
         public bool Create(Announcement model)
         {
-            throw new NotImplementedException();
+            _announcements.Add(model);
+            return true;
         }
 
         public bool Update(Guid id, Announcement model)
