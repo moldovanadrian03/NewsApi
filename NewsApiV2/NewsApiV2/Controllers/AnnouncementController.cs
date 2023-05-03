@@ -45,28 +45,6 @@ namespace NewsApiV2
         }
 
         /// <summary>
-        /// This method delete an announcement by id.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpDelete("{id}")]
-        public IActionResult Delete([FromRoute] Guid id)
-        {
-            bool exist = false;
-            foreach(Announcement currAnn in _announcements)
-            {
-                if(currAnn.Id == id)
-                {
-                    exist = true;
-                    _announcements.Remove(currAnn);
-                    break;
-                }
-            }
-            if (exist) { return Ok($"Ann: {id} is deleted succesfully."); }
-            return NotFound();
-        }
-
-        /// <summary>
         /// This method takes an ann from the body and return it in the response.
         /// </summary>
         /// <returns></returns>
@@ -108,6 +86,74 @@ namespace NewsApiV2
             if (exist) { return Ok($"Ann: {announcement} is updated succesfully."); }
             return NotFound();
         }
+
+        /// <summary>
+        /// This method update an existing announcement.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="announcement"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public IActionResult Update2([FromBody] Announcement announcement)
+        {
+            Announcement annToUpdate = _announcements.FirstOrDefault(item => item.Id == announcement.Id);
+            if(annToUpdate == null)
+            {
+                _announcements.Add(announcement);
+            }
+            else
+            {
+                annToUpdate.Title = announcement.Title;
+                annToUpdate.Author = announcement.Author;
+                annToUpdate.CategoryId = announcement.Author;
+                annToUpdate.Description = announcement.Description;
+            }
+            return Ok(announcement);
+        }
+
+        /// <summary>
+        /// This method delete an announcement by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute] Guid id)
+        {
+            bool exist = false;
+            foreach (Announcement currAnn in _announcements)
+            {
+                if (currAnn.Id == id)
+                {
+                    exist = true;
+                    _announcements.Remove(currAnn);
+                    break;
+                }
+            }
+            if (exist) { return Ok($"Ann: {id} is deleted succesfully."); }
+            return NotFound();
+        }
+        /// <summary>
+        /// This method delete an announcement by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
+        public IActionResult Delete2([FromRoute] Guid id)
+        {
+            //sterge toate ann care au id-ul egal cu id-ul din param adica unul singur
+            int deletedElements = _announcements.RemoveAll(item => item.Id == id);
+            if (deletedElements == 0)
+            {
+                return BadRequest("Ann cannot be deleted.");
+            }
+            return Ok($"Ann: {id} is deleted succesfully.");
+        }
+
+        /// <summary>
+        /// This method convert and GUID value to INT
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public static int Guid2Int(Guid value)
         {
             byte[] b = value.ToByteArray();
