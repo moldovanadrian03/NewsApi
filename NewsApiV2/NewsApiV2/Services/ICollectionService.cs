@@ -1,7 +1,7 @@
 ﻿using System;
 namespace NewsApiV2.Services
 {
-	public interface ICollectionService<T> where T: 
+	public interface ICollectionService<T> where T: new()
 	{
         List<T> GetAll();
 
