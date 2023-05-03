@@ -4,17 +4,10 @@
         <name>NewsApiV2</name>
     </assembly>
     <members>
-        <member name="M:NewsApiV2.AnnouncementController.Get">
+        <member name="M:NewsApiV2.AnnouncementController.GetAnnouncements">
             <summary>
             This method returns all Announcements.
             </summary>
-            <returns></returns>
-        </member>
-        <member name="M:NewsApiV2.AnnouncementController.GetById(System.Guid)">
-            <summary>
-            This is an getElementById method.
-            </summary>
-            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:NewsApiV2.AnnouncementController.Create(NewsApiV2.Controllers.Models.Announcement)">
@@ -23,26 +16,11 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:NewsApiV2.AnnouncementController.Update2(NewsApiV2.Controllers.Models.Announcement)">
-            <summary>
-            This method update an existing announcement.
-            </summary>
-            <param name="id"></param>
-            <param name="announcement"></param>
-            <returns></returns>
-        </member>
-        <member name="M:NewsApiV2.AnnouncementController.Delete2(System.Guid)">
+        <member name="M:NewsApiV2.AnnouncementController.Guid2Int(System.Guid)">
             <summary>
             This method delete an announcement by id.
             </summary>
             <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:NewsApiV2.AnnouncementController.Guid2Int(System.Guid)">
-            <summary>
-            This method convert and GUID value to INT
-            </summary>
-            <param name="value"></param>
             <returns></returns>
         </member>
         <member name="M:NewsApiV2.Controllers.CategoriesController.Get">

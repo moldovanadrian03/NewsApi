@@ -7,11 +7,11 @@ namespace NewsApiV2.Services
 
         T Get(Guid id);
 
-        bool Create(T model);
+        List<T> Create(T model);
 
         bool Update(Guid id, T model);
 
-        bool Delete(Guid id);
+        List<T> Delete(Guid id);
 
     }
 }

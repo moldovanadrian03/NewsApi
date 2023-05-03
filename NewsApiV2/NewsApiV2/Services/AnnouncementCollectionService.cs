@@ -20,7 +20,7 @@ namespace NewsApiV2.Services
 
         public Announcement Get(Guid id)
         {
-            throw new NotImplementedException();
+            return _announcements.Where(ann => ann.Id == id).SingleOrDefault();
         }
 
         public List<Announcement> GetAnnouncementsByCategoryId(string categoryId)
@@ -28,21 +28,23 @@ namespace NewsApiV2.Services
             throw new NotImplementedException();
         }
 
-        public bool Create(Announcement model)
+        public List<Announcement> Create(Announcement model)
         {
             _announcements.Add(model);
-            return true;
+            return _announcements;
         }
 
         public bool Update(Guid id, Announcement model)
         {
-            throw new NotImplementedException();
+            return true;
         }
 
-        public bool Delete(Guid id)
+        public List<Announcement> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _announcements.RemoveAll(ann => ann.Id == id);
+            return _announcements;
         }
+
     }
 }
 

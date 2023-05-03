@@ -42,8 +42,7 @@ namespace NewsApiV2
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
-            Announcement announcement = _announcements[Guid2Int(id)];
-            return Ok(announcement);
+            return (IActionResult)_announcementCollectionService.Get(id);
         }
 
         /// <summary>
@@ -59,6 +58,7 @@ namespace NewsApiV2
             }
 
             _announcementCollectionService.Create(announcement);
+
             List<Announcement> announcements = _announcementCollectionService.GetAll();
             return Ok(announcements);
         }
@@ -94,16 +94,17 @@ namespace NewsApiV2
         /// <summary>
         /// This method update an existing announcement.
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="announcement"></param>
-        /// <returns></returns>
+        /// <param name = "id" ></ param >
+        /// < param name= "announcement" ></ param >
+        /// < returns ></ returns >
         [HttpPut]
         public IActionResult Update2([FromBody] Announcement announcement)
         {
-            Announcement annToUpdate = _announcements.FirstOrDefault(item => item.Id == announcement.Id);
-            if(annToUpdate == null)
+            List<Announcement> announcements = _announcementCollectionService.GetAll();
+            Announcement annToUpdate = announcements.FirstOrDefault(item => item.Id == announcement.Id);
+            if (annToUpdate == null)
             {
-                _announcements.Add(announcement);
+                _announcementCollectionService.Create(announcement);
             }
             else
             {
@@ -136,6 +137,7 @@ namespace NewsApiV2
         //    if (exist) { return Ok($"Ann: {id} is deleted succesfully."); }
         //    return NotFound();
         //}
+
         /// <summary>
         /// This method delete an announcement by id.
         /// </summary>
@@ -144,12 +146,7 @@ namespace NewsApiV2
         [HttpDelete("{id}")]
         public IActionResult Delete2([FromRoute] Guid id)
         {
-            //sterge toate ann care au id-ul egal cu id-ul din param adica unul singur
-            int deletedElements = _announcements.RemoveAll(item => item.Id == id);
-            if (deletedElements == 0)
-            {
-                return NotFound("Ann cannot be deleted.");
-            }
+            _announcementCollectionService.Delete(id);
             return Ok($"Ann: {id} is deleted succesfully.");
         }
 
