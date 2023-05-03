@@ -34,7 +34,6 @@ namespace NewsApiV2
             return Ok(announcements);
         }
 
-
         /// <summary>
         /// This is an getElementById method.
         /// </summary>
@@ -58,8 +57,10 @@ namespace NewsApiV2
             {
                 return BadRequest("Announcement cannot be null.");
             }
-            _announcements.Add(announcement);
-            return Ok(_announcements);
+
+            _announcementCollectionService.Create(announcement);
+            List<Announcement> announcements = _announcementCollectionService.GetAll();
+            return Ok(announcements);
         }
 
        ///// <summary>
