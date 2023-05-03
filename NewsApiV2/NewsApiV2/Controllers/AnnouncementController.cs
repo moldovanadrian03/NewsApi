@@ -10,7 +10,8 @@ using NewsApiV2.Controllers.Models;
 namespace NewsApiV2
 {
     [ApiController]
-    [Route("api/[controller]")] // routa va fii localhost:port/api/Announcement
+    [Route("api/[controller]")]
+    // routa va fii localhost:port/api/Announcement
     public class AnnouncementController : ControllerBase
     {
         static List<Announcement> _announcements = new List<Announcement> {
@@ -59,33 +60,33 @@ namespace NewsApiV2
             return Ok(_announcements);
         }
 
-       /// <summary>
-       /// This method update an existing announcement.
-       /// </summary>
-       /// <param name="id"></param>
-       /// <param name="announcement"></param>
-       /// <returns></returns>
-        [HttpPut]
-        public IActionResult Update([FromRoute] Guid id, [FromBody] Announcement announcement)
-        {
-            bool exist = false;
-            if(announcement == null)
-            {
-                return BadRequest("Announcement cannot be null.");
-            }
-            foreach(Announcement currAnn in _announcements)
-            {   //TODO remake this
-                if (currAnn.Id == id)
-                {
-                    exist = true;
-                    _announcements.Remove(currAnn);
-                    _announcements.Add(announcement);
-                    break;
-                }
-            }
-            if (exist) { return Ok($"Ann: {announcement} is updated succesfully."); }
-            return NotFound();
-        }
+       ///// <summary>
+       ///// This method update an existing announcement.
+       ///// </summary>
+       ///// <param name="id"></param>
+       ///// <param name="announcement"></param>
+       ///// <returns></returns>
+       // [HttpPut]
+       // public IActionResult Update([FromRoute] Guid id, [FromBody] Announcement announcement)
+       // {
+       //     bool exist = false;
+       //     if(announcement == null)
+       //     {
+       //         return BadRequest("Announcement cannot be null.");
+       //     }
+       //     foreach(Announcement currAnn in _announcements)
+       //     {   //TODO remake this
+       //         if (currAnn.Id == id)
+       //         {
+       //             exist = true;
+       //             _announcements.Remove(currAnn);
+       //             _announcements.Add(announcement);
+       //             break;
+       //         }
+       //     }
+       //     if (exist) { return Ok($"Ann: {announcement} is updated succesfully."); }
+       //     return NotFound();
+       // }
 
         /// <summary>
         /// This method update an existing announcement.
@@ -111,27 +112,27 @@ namespace NewsApiV2
             return Ok(announcement);
         }
 
-        /// <summary>
-        /// This method delete an announcement by id.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpDelete("{id}")]
-        public IActionResult Delete([FromRoute] Guid id)
-        {
-            bool exist = false;
-            foreach (Announcement currAnn in _announcements)
-            {
-                if (currAnn.Id == id)
-                {
-                    exist = true;
-                    _announcements.Remove(currAnn);
-                    break;
-                }
-            }
-            if (exist) { return Ok($"Ann: {id} is deleted succesfully."); }
-            return NotFound();
-        }
+        ///// <summary>
+        ///// This method delete an announcement by id.
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <returns></returns>
+        //[HttpDelete("{id}")]
+        //public IActionResult Delete([FromRoute] Guid id)
+        //{
+        //    bool exist = false;
+        //    foreach (Announcement currAnn in _announcements)
+        //    {
+        //        if (currAnn.Id == id)
+        //        {
+        //            exist = true;
+        //            _announcements.Remove(currAnn);
+        //            break;
+        //        }
+        //    }
+        //    if (exist) { return Ok($"Ann: {id} is deleted succesfully."); }
+        //    return NotFound();
+        //}
         /// <summary>
         /// This method delete an announcement by id.
         /// </summary>
@@ -144,7 +145,7 @@ namespace NewsApiV2
             int deletedElements = _announcements.RemoveAll(item => item.Id == id);
             if (deletedElements == 0)
             {
-                return BadRequest("Ann cannot be deleted.");
+                return NotFound("Ann cannot be deleted.");
             }
             return Ok($"Ann: {id} is deleted succesfully.");
         }

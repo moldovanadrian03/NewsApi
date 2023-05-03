@@ -23,27 +23,12 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:NewsApiV2.AnnouncementController.Update(System.Guid,NewsApiV2.Controllers.Models.Announcement)">
-            <summary>
-            This method update an existing announcement.
-            </summary>
-            <param name="id"></param>
-            <param name="announcement"></param>
-            <returns></returns>
-        </member>
         <member name="M:NewsApiV2.AnnouncementController.Update2(NewsApiV2.Controllers.Models.Announcement)">
             <summary>
             This method update an existing announcement.
             </summary>
             <param name="id"></param>
             <param name="announcement"></param>
-            <returns></returns>
-        </member>
-        <member name="M:NewsApiV2.AnnouncementController.Delete(System.Guid)">
-            <summary>
-            This method delete an announcement by id.
-            </summary>
-            <param name="id"></param>
             <returns></returns>
         </member>
         <member name="M:NewsApiV2.AnnouncementController.Delete2(System.Guid)">
