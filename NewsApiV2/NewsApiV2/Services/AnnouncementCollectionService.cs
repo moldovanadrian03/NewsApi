@@ -13,22 +13,12 @@ namespace NewsApiV2.Services
         new Announcement { Id = Guid.NewGuid(), CategoryId = "1", Title = "Fifth Announcement", Description = "Fifth Announcement Description", Author = "Author_4"  }
         };
 
-        public bool Create(Announcement model)
+        public List<Announcement> GetAll()
         {
-            throw new NotImplementedException();
-        }
-
-        public bool Delete(Guid id)
-        {
-            throw new NotImplementedException();
+            return _announcements;
         }
 
         public Announcement Get(Guid id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<Announcement> GetAll()
         {
             throw new NotImplementedException();
         }
@@ -38,7 +28,17 @@ namespace NewsApiV2.Services
             throw new NotImplementedException();
         }
 
+        public bool Create(Announcement model)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool Update(Guid id, Announcement model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool Delete(Guid id)
         {
             throw new NotImplementedException();
         }
