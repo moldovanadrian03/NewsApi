@@ -10,7 +10,7 @@ using NewsApiV2.Controllers.Models;
 namespace NewsApiV2
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/[controller]")] // routa va fii localhost:port/api/Announcement
     public class AnnouncementController : ControllerBase
     {
         static List<Announcement> _announcements = new List<Announcement> {
@@ -20,6 +20,7 @@ namespace NewsApiV2
         new Announcement { Id = Guid.NewGuid(), CategoryId = "1", Title = "Fourth Announcement", Description = "Fourth Announcement Description", Author = "Author_3"  },
         new Announcement { Id = Guid.NewGuid(), CategoryId = "1", Title = "Fifth Announcement", Description = "Fifth Announcement Description", Author = "Author_4"  }
         };
+
 
         /// <summary>
         /// This method returns all Announcements.
@@ -36,10 +37,11 @@ namespace NewsApiV2
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("getById/{id}")]
+        [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
-            return Ok("GetById method was called.");
+            Announcement announcement = _announcements[Guid2Int(id)];
+            return Ok(announcement);
         }
 
         /// <summary>
@@ -75,7 +77,8 @@ namespace NewsApiV2
             {
                 return BadRequest("Announcement cannot be null.");
             }
-            return Ok(announcement);
+            _announcements.Add(announcement);
+            return Ok(_announcements);
         }
 
        /// <summary>
@@ -104,6 +107,12 @@ namespace NewsApiV2
             }
             if (exist) { return Ok($"Ann: {announcement} is updated succesfully."); }
             return NotFound();
+        }
+        public static int Guid2Int(Guid value)
+        {
+            byte[] b = value.ToByteArray();
+            int bint = BitConverter.ToInt32(b, 0);
+            return bint;
         }
     }
 }
