@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using NewsApiV2.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddSwaggerGen( (c) =>
     c.IncludeXmlComments(xmlPath);
 
 });
+
+builder.Services.AddSingleton<IAnnouncementCollectionService, AnnouncementCollectionService>();
 
 var app = builder.Build();
 
