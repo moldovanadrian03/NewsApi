@@ -3,15 +3,15 @@ namespace NewsApiV2.Services
 {
 	public interface ICollectionService<T> where T: new()
 	{
-        List<T> GetAll();
+        Task<List<T>> GetAll();
 
-        T Get(Guid id);
+        Task<T> Get(Guid id);
 
-        List<T> Create(T model);
+        Task<bool> Create(T model);
 
-        bool Update(Guid id, T model);
+        Task<bool> Update(Guid id, T model);
 
-        List<T> Delete(Guid id);
+        Task<List<T>> Delete(Guid id);
 
     }
 }
