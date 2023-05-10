@@ -25,10 +25,12 @@
     <None Remove="MongoDB.Driver.Core" />
     <None Remove="MongoDB.Driver" />
     <None Remove="MongoDB.Bson" />
+    <None Remove="Settings\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Models\" />
     <Folder Include="Services\" />
     <Folder Include="Services\" />
+    <Folder Include="Settings\" />
   </ItemGroup>
 </Project>
