@@ -43,7 +43,8 @@ namespace NewsApiV2
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            return (IActionResult)await _announcementCollectionService.Get(id);
+            var result = await _announcementCollectionService.Get(id);
+            return Ok(result);
         }
 
         /// <summary>
@@ -58,10 +59,8 @@ namespace NewsApiV2
                 return BadRequest("Announcement cannot be null.");
             }
 
-            _announcementCollectionService.Create(announcement);
-
-            List<Announcement> announcements = await _announcementCollectionService.GetAll();
-            return Ok(announcements);
+            var result = await _announcementCollectionService.Create(announcement);
+            return Ok(announcement);
         }
 
         ///// <summary>
@@ -101,21 +100,16 @@ namespace NewsApiV2
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] Announcement announcement)
         {
-            List<Announcement> announcements = await _announcementCollectionService.GetAll();
-            Announcement annToUpdate = announcements.FirstOrDefault(item => item.Id == announcement.Id);
-            if (annToUpdate == null)
+            var result = await _announcementCollectionService.Update(announcement.Id, announcement);
+
+            if (result)
             {
-                _announcementCollectionService.Create(announcement);
+                return Ok();
             }
             else
             {
-                annToUpdate.Title = announcement.Title;
-                annToUpdate.Author = announcement.Author;
-                annToUpdate.CategoryId = announcement.Author;
-                annToUpdate.Message = announcement.Message;
-                annToUpdate.ImageUrl = announcement.ImageUrl;
+                return BadRequest();
             }
-            return Ok(announcement);
         }
 
         ///// <summary>
@@ -150,18 +144,6 @@ namespace NewsApiV2
         {
             await _announcementCollectionService.Delete(id);
             return Ok($"Ann: {id} is deleted succesfully.");
-        }
-
-        /// <summary>
-        /// This method convert and GUID value to INT
-        /// </summary>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public static int Guid2Int(Guid value)
-        {
-            byte[] b = value.ToByteArray();
-            int bint = BitConverter.ToInt32(b, 0);
-            return bint;
         }
     }
 }
