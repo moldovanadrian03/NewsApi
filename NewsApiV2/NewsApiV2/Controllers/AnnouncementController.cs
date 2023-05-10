@@ -99,7 +99,7 @@ namespace NewsApiV2
         /// < param name= "announcement" ></ param >
         /// < returns ></ returns >
         [HttpPut]
-        public async Task<IActionResult> Update2([FromBody] Announcement announcement)
+        public async Task<IActionResult> Update([FromBody] Announcement announcement)
         {
             List<Announcement> announcements = await _announcementCollectionService.GetAll();
             Announcement annToUpdate = announcements.FirstOrDefault(item => item.Id == announcement.Id);
@@ -146,7 +146,7 @@ namespace NewsApiV2
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete2([FromRoute] Guid id)
+        public async Task<IActionResult> Delete([FromRoute] Guid id)
         {
             await _announcementCollectionService.Delete(id);
             return Ok($"Ann: {id} is deleted succesfully.");

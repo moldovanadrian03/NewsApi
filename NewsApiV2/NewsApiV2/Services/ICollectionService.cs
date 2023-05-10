@@ -11,7 +11,7 @@ namespace NewsApiV2.Services
 
         Task<bool> Update(Guid id, T model);
 
-        Task<List<T>> Delete(Guid id);
+        Task<bool> Delete(Guid id);
 
     }
 }
