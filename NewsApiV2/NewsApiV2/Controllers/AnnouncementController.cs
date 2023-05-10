@@ -43,7 +43,7 @@ namespace NewsApiV2
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(Guid id)
         {
-            return (IActionResult)_announcementCollectionService.Get(id);
+            return (IActionResult)await _announcementCollectionService.Get(id);
         }
 
         /// <summary>

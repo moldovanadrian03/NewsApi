@@ -30,10 +30,11 @@ namespace NewsApiV2.Services
         }
 
 
-        //public List<Announcement> GetAnnouncementsByCategoryId(string categoryId)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<List<Announcement>> GetAnnouncementsByCategoryId(string categoryId)
+        {
+            return (await _announcements.FindAsync(announcement => announcement.CategoryId == categoryId)).ToList();
+        }
+
 
         public async Task<bool> Create(Announcement announcement)
         {
