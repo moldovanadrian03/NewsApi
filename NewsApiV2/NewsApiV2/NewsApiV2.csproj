@@ -14,11 +14,17 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="MongoDB.Driver.Core" Version="2.19.1" />
+    <PackageReference Include="MongoDB.Driver" Version="2.19.1" />
+    <PackageReference Include="MongoDB.Bson" Version="2.19.1" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Controllers\Models\" />
     <None Remove="Services\" />
+    <None Remove="MongoDB.Driver.Core" />
+    <None Remove="MongoDB.Driver" />
+    <None Remove="MongoDB.Bson" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Models\" />
