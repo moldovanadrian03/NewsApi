@@ -47,10 +47,19 @@ namespace NewsApiV2.Services
         }
 
 
-        //public bool Update(Guid id, Announcement model)
-        //{
-        //    return true;
-        //}
+        public async Task<bool> Update(Guid id, Announcement announcement)
+        {
+            announcement.Id = id;
+            var result = await _announcements.ReplaceOneAsync(announcement => announcement.Id == id, announcement);
+            if (!result.IsAcknowledged && result.ModifiedCount == 0)
+            {
+                await _announcements.InsertOneAsync(announcement);
+                return false;
+            }
+
+            return true;
+        }
+
 
         public async Task<bool> Delete(Guid id)
         {

@@ -98,24 +98,25 @@ namespace NewsApiV2
         /// <param name = "id" ></ param >
         /// < param name= "announcement" ></ param >
         /// < returns ></ returns >
-        //[HttpPut]
-        //public IActionResult Update2([FromBody] Announcement announcement)
-        //{
-        //    List<Announcement> announcements = _announcementCollectionService.GetAll();
-        //    Announcement annToUpdate = announcements.FirstOrDefault(item => item.Id == announcement.Id);
-        //    if (annToUpdate == null)
-        //    {
-        //        _announcementCollectionService.Create(announcement);
-        //    }
-        //    else
-        //    {
-        //        annToUpdate.Title = announcement.Title;
-        //        annToUpdate.Author = announcement.Author;
-        //        annToUpdate.CategoryId = announcement.Author;
-        //        annToUpdate.Description = announcement.Description;
-        //    }
-        //    return Ok(announcement);
-        //}
+        [HttpPut]
+        public async Task<IActionResult> Update2([FromBody] Announcement announcement)
+        {
+            List<Announcement> announcements = await _announcementCollectionService.GetAll();
+            Announcement annToUpdate = announcements.FirstOrDefault(item => item.Id == announcement.Id);
+            if (annToUpdate == null)
+            {
+                _announcementCollectionService.Create(announcement);
+            }
+            else
+            {
+                annToUpdate.Title = announcement.Title;
+                annToUpdate.Author = announcement.Author;
+                annToUpdate.CategoryId = announcement.Author;
+                annToUpdate.Message = announcement.Message;
+                annToUpdate.ImageUrl = announcement.ImageUrl;
+            }
+            return Ok(announcement);
+        }
 
         ///// <summary>
         ///// This method delete an announcement by id.
