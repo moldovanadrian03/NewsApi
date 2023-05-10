@@ -10,10 +10,11 @@ namespace NewsApiV2.Controllers.Models
 		public Guid Id { get; set; }
 		[Required]
 		public string Title { get; set; }
-		public string Description { get; set; }
+		public string Message { get; set; }
 		[Required]
 		public string CategoryId { get; set; }
 		public string Author { get; set; }
+		public string ImageUrl { get; set; }
 
         public Announcement()
 		{
