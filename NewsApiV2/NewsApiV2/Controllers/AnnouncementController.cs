@@ -144,12 +144,12 @@ namespace NewsApiV2
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[HttpDelete("{id}")]
-        //public IActionResult Delete2([FromRoute] Guid id)
-        //{
-        //    _announcementCollectionService.Delete(id);
-        //    return Ok($"Ann: {id} is deleted succesfully.");
-        //}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete2([FromRoute] Guid id)
+        {
+            await _announcementCollectionService.Delete(id);
+            return Ok($"Ann: {id} is deleted succesfully.");
+        }
 
         /// <summary>
         /// This method convert and GUID value to INT

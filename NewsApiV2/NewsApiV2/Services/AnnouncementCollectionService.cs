@@ -51,11 +51,16 @@ namespace NewsApiV2.Services
         //    return true;
         //}
 
-        //public List<Announcement> Delete(Guid id)
-        //{
-        //    _announcements.RemoveAll(ann => ann.Id == id);
-        //    return _announcements;
-        //}
+        public async Task<bool> Delete(Guid id)
+        {
+            var result = await _announcements.DeleteOneAsync(announcement => announcement.Id == id);
+            if (!result.IsAcknowledged && result.DeletedCount == 0)
+            {
+                return false;
+            }
+            return true;
+        }
+
 
     }
 }
