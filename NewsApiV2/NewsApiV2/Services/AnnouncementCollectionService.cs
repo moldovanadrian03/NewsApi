@@ -1,14 +1,28 @@
 ﻿using System;
+using MongoDB.Driver;
 using NewsApiV2.Controllers.Models;
+using NewsApiV2.Settings;
 
 namespace NewsApiV2.Services
 {
     public class AnnouncementCollectionService : IAnnouncementCollectionService
     {
-        //public List<Announcement> GetAll()
-        //{
-        //    return _announcements;
-        //}
+        private readonly IMongoCollection<Announcement> _announcements;
+
+        public AnnouncementCollectionService(IMongoDBSettings settings)
+        {
+            var client = new MongoClient(settings.ConnectionString);
+            var database = client.GetDatabase(settings.DatabaseName);
+
+            _announcements = database.GetCollection<Announcement>(settings.AnnouncementsCollectionName);
+        }
+
+        public async Task<List<Announcement>> GetAll()
+        {
+            var result = await _announcements.FindAsync(announcement => true);
+            return result.ToList();
+        }
+
 
         //public Announcement Get(Guid id)
         //{
