@@ -1,7 +1,13 @@
 ﻿using System.Reflection;
+using Microsoft.Extensions.Options;
 using NewsApiV2.Services;
+using NewsApiV2.Settings;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection(nameof(MongoDBSettings)));
+builder.Services.AddSingleton<IMongoDBSettings>(sp => sp.GetRequiredService<IOptions<MongoDBSettings>>().Value);
+
 
 // Add services to the container.
 
