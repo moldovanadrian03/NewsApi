@@ -32,3 +32,16 @@
 /Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/obj/Debug/net6.0/NewsApiV2.pdb
 /Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/obj/Debug/net6.0/NewsApiV2.genruntimeconfig.cache
 /Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/obj/Debug/net6.0/ref/NewsApiV2.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/AWSSDK.Core.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/AWSSDK.SecurityToken.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/DnsClient.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/MongoDB.Bson.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/MongoDB.Driver.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/MongoDB.Driver.Core.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/MongoDB.Libmongocrypt.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/SharpCompress.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/Snappier.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/ZstdSharp.dll
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/runtimes/linux/native/libmongocrypt.so
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/runtimes/osx/native/libmongocrypt.dylib
+/Users/adrianmoldovan/Desktop/anul2/sem2/꩜3Projects2/NewsApi(backend)/NewsApi/NewsApiV2/NewsApiV2/bin/Debug/net6.0/runtimes/win/native/mongocrypt.dll

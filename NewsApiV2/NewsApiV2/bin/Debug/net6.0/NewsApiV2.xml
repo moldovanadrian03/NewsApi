@@ -10,17 +10,32 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:NewsApiV2.AnnouncementController.GetById(System.Guid)">
+            <summary>
+            This is an getElementById method.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="M:NewsApiV2.AnnouncementController.Create(NewsApiV2.Controllers.Models.Announcement)">
             <summary>
             This method takes an ann from the body and return it in the response.
             </summary>
             <returns></returns>
         </member>
-        <member name="M:NewsApiV2.AnnouncementController.Guid2Int(System.Guid)">
+        <!-- Badly formed XML comment ignored for member "M:NewsApiV2.AnnouncementController.Update(NewsApiV2.Controllers.Models.Announcement)" -->
+        <member name="M:NewsApiV2.AnnouncementController.Delete(System.Guid)">
             <summary>
             This method delete an announcement by id.
             </summary>
             <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:NewsApiV2.AnnouncementController.Guid2Int(System.Guid)">
+            <summary>
+            This method convert and GUID value to INT
+            </summary>
+            <param name="value"></param>
             <returns></returns>
         </member>
         <member name="M:NewsApiV2.Controllers.CategoriesController.Get">
