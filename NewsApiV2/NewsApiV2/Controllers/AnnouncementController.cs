@@ -40,11 +40,11 @@ namespace NewsApiV2
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        //[HttpGet("{id}")]
-        //public IActionResult GetById(Guid id)
-        //{
-        //    return (IActionResult)_announcementCollectionService.Get(id);
-        //}
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(Guid id)
+        {
+            return (IActionResult)_announcementCollectionService.Get(id);
+        }
 
         /// <summary>
         /// This method takes an ann from the body and return it in the response.

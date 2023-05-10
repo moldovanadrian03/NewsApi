@@ -24,10 +24,11 @@ namespace NewsApiV2.Services
         }
 
 
-        //public Announcement Get(Guid id)
-        //{
-        //    return _announcements.Where(ann => ann.Id == id).SingleOrDefault();
-        //}
+        public async Task<Announcement> Get(Guid id)
+        {
+            return (await _announcements.FindAsync(announcement => announcement.Id == id)).FirstOrDefault();
+        }
+
 
         //public List<Announcement> GetAnnouncementsByCategoryId(string categoryId)
         //{
