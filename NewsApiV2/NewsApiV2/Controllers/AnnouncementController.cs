@@ -50,47 +50,47 @@ namespace NewsApiV2
         /// This method takes an ann from the body and return it in the response.
         /// </summary>
         /// <returns></returns>
-        //[HttpPost]
-        //public IActionResult Create([FromBody] Announcement announcement)
-        //{
-        //    if (announcement == null)
-        //    {
-        //        return BadRequest("Announcement cannot be null.");
-        //    }
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] Announcement announcement)
+        {
+            if (announcement == null)
+            {
+                return BadRequest("Announcement cannot be null.");
+            }
 
-        //    _announcementCollectionService.Create(announcement);
+            _announcementCollectionService.Create(announcement);
 
-        //    List<Announcement> announcements = _announcementCollectionService.GetAll();
-        //    return Ok(announcements);
-        //}
+            List<Announcement> announcements = await _announcementCollectionService.GetAll();
+            return Ok(announcements);
+        }
 
-       ///// <summary>
-       ///// This method update an existing announcement.
-       ///// </summary>
-       ///// <param name="id"></param>
-       ///// <param name="announcement"></param>
-       ///// <returns></returns>
-       // [HttpPut]
-       // public IActionResult Update([FromRoute] Guid id, [FromBody] Announcement announcement)
-       // {
-       //     bool exist = false;
-       //     if(announcement == null)
-       //     {
-       //         return BadRequest("Announcement cannot be null.");
-       //     }
-       //     foreach(Announcement currAnn in _announcements)
-       //     {   //TODO remake this
-       //         if (currAnn.Id == id)
-       //         {
-       //             exist = true;
-       //             _announcements.Remove(currAnn);
-       //             _announcements.Add(announcement);
-       //             break;
-       //         }
-       //     }
-       //     if (exist) { return Ok($"Ann: {announcement} is updated succesfully."); }
-       //     return NotFound();
-       // }
+        ///// <summary>
+        ///// This method update an existing announcement.
+        ///// </summary>
+        ///// <param name="id"></param>
+        ///// <param name="announcement"></param>
+        ///// <returns></returns>
+        // [HttpPut]
+        // public IActionResult Update([FromRoute] Guid id, [FromBody] Announcement announcement)
+        // {
+        //     bool exist = false;
+        //     if(announcement == null)
+        //     {
+        //         return BadRequest("Announcement cannot be null.");
+        //     }
+        //     foreach(Announcement currAnn in _announcements)
+        //     {   //TODO remake this
+        //         if (currAnn.Id == id)
+        //         {
+        //             exist = true;
+        //             _announcements.Remove(currAnn);
+        //             _announcements.Add(announcement);
+        //             break;
+        //         }
+        //     }
+        //     if (exist) { return Ok($"Ann: {announcement} is updated succesfully."); }
+        //     return NotFound();
+        // }
 
         /// <summary>
         /// This method update an existing announcement.

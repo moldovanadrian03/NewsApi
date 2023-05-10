@@ -34,11 +34,17 @@ namespace NewsApiV2.Services
         //    throw new NotImplementedException();
         //}
 
-        //public List<Announcement> Create(Announcement model)
-        //{
-        //    _announcements.Add(model);
-        //    return _announcements;
-        //}
+        public async Task<bool> Create(Announcement announcement)
+        {
+            if (announcement.Id == Guid.Empty)
+            {
+                announcement.Id = Guid.NewGuid();
+            }
+
+            await _announcements.InsertOneAsync(announcement);
+            return true;
+        }
+
 
         //public bool Update(Guid id, Announcement model)
         //{
