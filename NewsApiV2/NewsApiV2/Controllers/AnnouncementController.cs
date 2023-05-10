@@ -28,40 +28,41 @@ namespace NewsApiV2
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public IActionResult GetAnnouncements()
+        public async Task<IActionResult> GetAnnouncements()
         {
-            List<Announcement> announcements = _announcementCollectionService.GetAll();
+            List<Announcement> announcements = await _announcementCollectionService.GetAll();
             return Ok(announcements);
         }
+
 
         /// <summary>
         /// This is an getElementById method.
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpGet("{id}")]
-        public IActionResult GetById(Guid id)
-        {
-            return (IActionResult)_announcementCollectionService.Get(id);
-        }
+        //[HttpGet("{id}")]
+        //public IActionResult GetById(Guid id)
+        //{
+        //    return (IActionResult)_announcementCollectionService.Get(id);
+        //}
 
         /// <summary>
         /// This method takes an ann from the body and return it in the response.
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
-        public IActionResult Create([FromBody] Announcement announcement)
-        {
-            if (announcement == null)
-            {
-                return BadRequest("Announcement cannot be null.");
-            }
+        //[HttpPost]
+        //public IActionResult Create([FromBody] Announcement announcement)
+        //{
+        //    if (announcement == null)
+        //    {
+        //        return BadRequest("Announcement cannot be null.");
+        //    }
 
-            _announcementCollectionService.Create(announcement);
+        //    _announcementCollectionService.Create(announcement);
 
-            List<Announcement> announcements = _announcementCollectionService.GetAll();
-            return Ok(announcements);
-        }
+        //    List<Announcement> announcements = _announcementCollectionService.GetAll();
+        //    return Ok(announcements);
+        //}
 
        ///// <summary>
        ///// This method update an existing announcement.
@@ -97,24 +98,24 @@ namespace NewsApiV2
         /// <param name = "id" ></ param >
         /// < param name= "announcement" ></ param >
         /// < returns ></ returns >
-        [HttpPut]
-        public IActionResult Update2([FromBody] Announcement announcement)
-        {
-            List<Announcement> announcements = _announcementCollectionService.GetAll();
-            Announcement annToUpdate = announcements.FirstOrDefault(item => item.Id == announcement.Id);
-            if (annToUpdate == null)
-            {
-                _announcementCollectionService.Create(announcement);
-            }
-            else
-            {
-                annToUpdate.Title = announcement.Title;
-                annToUpdate.Author = announcement.Author;
-                annToUpdate.CategoryId = announcement.Author;
-                annToUpdate.Description = announcement.Description;
-            }
-            return Ok(announcement);
-        }
+        //[HttpPut]
+        //public IActionResult Update2([FromBody] Announcement announcement)
+        //{
+        //    List<Announcement> announcements = _announcementCollectionService.GetAll();
+        //    Announcement annToUpdate = announcements.FirstOrDefault(item => item.Id == announcement.Id);
+        //    if (annToUpdate == null)
+        //    {
+        //        _announcementCollectionService.Create(announcement);
+        //    }
+        //    else
+        //    {
+        //        annToUpdate.Title = announcement.Title;
+        //        annToUpdate.Author = announcement.Author;
+        //        annToUpdate.CategoryId = announcement.Author;
+        //        annToUpdate.Description = announcement.Description;
+        //    }
+        //    return Ok(announcement);
+        //}
 
         ///// <summary>
         ///// This method delete an announcement by id.
@@ -143,12 +144,12 @@ namespace NewsApiV2
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("{id}")]
-        public IActionResult Delete2([FromRoute] Guid id)
-        {
-            _announcementCollectionService.Delete(id);
-            return Ok($"Ann: {id} is deleted succesfully.");
-        }
+        //[HttpDelete("{id}")]
+        //public IActionResult Delete2([FromRoute] Guid id)
+        //{
+        //    _announcementCollectionService.Delete(id);
+        //    return Ok($"Ann: {id} is deleted succesfully.");
+        //}
 
         /// <summary>
         /// This method convert and GUID value to INT
