@@ -94,7 +94,6 @@ namespace NewsApiV2
         /// <summary>
         /// This method update an existing announcement.
         /// </summary>
-        /// <param name = "id" ></ param >
         /// < param name= "announcement" ></ param >
         /// < returns ></ returns >
         [HttpPut]

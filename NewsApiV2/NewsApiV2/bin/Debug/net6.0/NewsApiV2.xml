@@ -31,13 +31,6 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:NewsApiV2.AnnouncementController.Guid2Int(System.Guid)">
-            <summary>
-            This method convert and GUID value to INT
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
         <member name="M:NewsApiV2.Controllers.CategoriesController.Get">
             <summary>
             This is an getAllCategories method.
